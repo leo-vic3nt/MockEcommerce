@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import clothesService from "@/services/clothesApiService.ts";
 import { ClothCategory } from "@/types/ClothItem.ts";
+import Brand from "@/components/Brand.tsx";
 
 function App() {
 	const menClothesQuery = useQuery({
@@ -13,10 +14,6 @@ function App() {
 		queryKey: ["clothes", ClothCategory.WOMEN],
 		queryFn: clothesService.getWomenClothes,
 	});
-
-	if (menClothesQuery.isSuccess && womenClothesQuery.isSuccess) {
-		console.log(menClothesQuery.data, womenClothesQuery.data);
-	}
 
 	return <div></div>;
 }

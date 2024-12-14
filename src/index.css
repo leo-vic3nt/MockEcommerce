@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+    @font-face {
+        font-family: 'Cooper Black';
+        src: url('./assets/fonts/COOPBL.TTF') format('truetype');
+        font-style: normal;
+        font-display: swap;
+        font-weight: normal;
+    }
+
     :root {
         font-family: "Inter", sans-serif;
         font-optical-sizing: auto;
         --radius: 0.5rem
     }
 }
+
