@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-  :root {
-    --radius: 0.5rem
-  }
+    :root {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        --radius: 0.5rem
+    }
 }
