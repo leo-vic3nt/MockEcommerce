@@ -5,6 +5,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
@@ -37,5 +38,6 @@ export default tseslint.config(
 			...react.configs["jsx-runtime"].rules,
 		},
 	},
+	...pluginQuery.configs["flat/recommended"],
 	eslintConfigPrettier,
 );
