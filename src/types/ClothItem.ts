@@ -4,8 +4,8 @@ interface Rating {
 }
 
 enum ClothCategory {
-	men = "men's clothing",
-	women = "women's clothing",
+	MEN = "men's clothing",
+	WOMEN = "women's clothing",
 }
 
 interface ClothItem {
