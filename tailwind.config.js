@@ -3,10 +3,6 @@ export default {
 	darkMode: ["class"],
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
-		fontFamily: {
-			cooperBlack: ["Cooper Black", "ui-sans-serif"],
-		},
-
 		extend: {
 			borderRadius: {
 				lg: "var(--radius)",
@@ -16,6 +12,9 @@ export default {
 			colors: {
 				"orange-contrast": "#F85F4F",
 				"background-cream": "#FFF9E6",
+			},
+			fontFamily: {
+				cooperBlack: ["Cooper Black", "ui-sans-serif"],
 			},
 		},
 	},
