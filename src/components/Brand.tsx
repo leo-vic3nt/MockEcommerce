@@ -6,10 +6,10 @@ interface Props {
 
 function Brand({ withLogoImg = false }: Props) {
 	return (
-		<div className="flex justify-center items-center w-fit">
-			{withLogoImg && <img className="size-14 pt-1 lg:size-16 " src={logoImg} alt="ayy" />}
-			<h1 className="text-4xl lg:text-5xl font-cooperBlack lowercase">
-				nice orange<span className="text-contrastOrange">.</span>
+		<div className="flex w-fit items-center justify-center">
+			{withLogoImg && <img className="size-14 pt-1 lg:size-16" src={logoImg} alt="ayy" />}
+			<h1 className="font-cooperBlack text-4xl lowercase lg:text-5xl">
+				nice orange<span className="text-orange-contrast">.</span>
 			</h1>
 		</div>
 	);

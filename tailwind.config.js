@@ -7,17 +7,16 @@ export default {
 			cooperBlack: ["Cooper Black", "ui-sans-serif"],
 		},
 
-		colors: {
-			contrastOrange: "#F85F4F",
-		},
-
 		extend: {
 			borderRadius: {
 				lg: "var(--radius)",
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
-			colors: {},
+			colors: {
+				"orange-contrast": "#F85F4F",
+				"background-cream": "#FFF9E6",
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

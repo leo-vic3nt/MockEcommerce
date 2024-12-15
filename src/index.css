@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
     @font-face {
         font-family: 'Cooper Black';
@@ -15,5 +16,17 @@
         font-optical-sizing: auto;
         --radius: 0.5rem
     }
+
+    html, body {
+        height: 100%;
+    }
+
+    #root {
+        min-height: 100vh;
+
+    }
 }
+
+
+
 
