@@ -2,31 +2,33 @@ import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
 import { describe, test, expect } from "vitest";
-import { BrowserRouter } from "react-router-dom";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 import Brand from "./Brand";
 
 describe("Brand", () => {
 	test("navigates to root when clicked", async () => {
 		const user = userEvent.setup();
-		window.history.pushState({}, "", "/some-other-page");
 		render(
-			<BrowserRouter>
-				<Brand withLogoImg={false} />
-			</BrowserRouter>,
+			<MemoryRouter initialEntries={["/shop"]}>
+				<Routes>
+					<Route path="/" element={<div>Home Page</div>} />
+					<Route path="/shop" element={<Brand withLogoImg={false} />} />
+				</Routes>
+			</MemoryRouter>,
 		);
 		const brandLink = screen.getByRole("link");
 
 		expect(brandLink.getAttribute("href")).toBe("/");
 		await user.click(brandLink);
-		expect(window.location.pathname).toBe("/");
+		expect(screen.getByText("Home Page")).toBeInTheDocument();
 	});
 
 	test("renders logo image when withLogoImg is true", () => {
 		render(
-			<BrowserRouter>
+			<MemoryRouter>
 				<Brand withLogoImg={true} />
-			</BrowserRouter>,
+			</MemoryRouter>,
 		);
 
 		const logoImage = screen.getByRole("img", { name: "logo image" });
@@ -36,9 +38,9 @@ describe("Brand", () => {
 
 	test("does not render logo image when withLogoImg is false", () => {
 		render(
-			<BrowserRouter>
+			<MemoryRouter>
 				<Brand withLogoImg={false} />
-			</BrowserRouter>,
+			</MemoryRouter>,
 		);
 
 		const logoImage = screen.queryByRole("img");
