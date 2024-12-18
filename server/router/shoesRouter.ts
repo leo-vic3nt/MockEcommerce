@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import shoesData from "../data.js";
+import shoesData from "../shoesData.js";
 
 const shoesRouter = Router();
 
@@ -9,7 +9,7 @@ shoesRouter.get("/", (_req: Request, res: Response) => {
 
 shoesRouter.get("/:id", (req: Request, res: Response) => {
     const { id } = req.params;
-    const foundShoe = shoesData.find(shoe => shoe.id === Number(id));
+    const foundShoe = shoesData.find((shoe) => shoe.id === Number(id));
 
     if (!foundShoe) {
         res.sendStatus(404);
@@ -17,6 +17,5 @@ shoesRouter.get("/:id", (req: Request, res: Response) => {
 
     res.json(foundShoe);
 });
-
 
 export default shoesRouter;
