@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import cors from "cors";
 import "dotenv/config";
 import helmet from "helmet";
 import compression from "compression";
@@ -7,9 +8,26 @@ import shoesRouter from "./router/shoesRouter.js";
 
 const app = express();
 
-app.use(helmet());
-app.use("/assets", express.static(path.join(import.meta.dirname, "public")));
+app.use(
+    cors({
+        origin: "http://localhost:5173",
+        methods: ["GET"],
+    })
+);
+app.use(
+    helmet({
+        crossOriginResourcePolicy: {
+            policy: "same-site",
+        },
+        contentSecurityPolicy: {
+            directives: {
+                imgSrc: ["'self'", "http://localhost:3001"]
+            }
+        }
+    })
+);
 app.use(compression());
+app.use("/assets", express.static(path.join(import.meta.dirname, "public")));
 
 app.use("/shoes", shoesRouter);
 
