@@ -12,7 +12,7 @@ function MobileNav() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<button role="button" className="focus-visible:outline-none">
+				<button role="menutrigger" className="focus-visible:outline-none">
 					<Menu className="stroke-orange-contrast size-6" />
 				</button>
 			</DropdownMenuTrigger>
