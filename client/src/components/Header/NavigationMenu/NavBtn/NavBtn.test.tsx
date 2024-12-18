@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { describe, expect, test } from "vitest";
 
-import NavBtn from "./NavBtn";
+import NavBtn from "./NavBtn.tsx";
 import userEvent from "@testing-library/user-event";
 
 describe("NavBtn", () => {

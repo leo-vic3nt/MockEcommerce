@@ -1,17 +1,16 @@
 import axios from "axios";
 
-import { ClothCategory, ClothItem } from "@/types/ClothItem.ts";
+import { Shoe } from "@/types/Shoe.ts";
+import { apiBaseUrl } from "@/lib/utils.ts";
 
-const apiBaseUrl = "https://fakestoreapi.com/products/category";
-
-async function getMenClothes(): Promise<ClothItem[]> {
-	const { data } = await axios.get<ClothItem[]>(`${apiBaseUrl}/${ClothCategory.MEN}`);
+async function getAllShoes(): Promise<Shoe[]> {
+	const { data } = await axios.get<Shoe[]>(`${apiBaseUrl}/shoes`);
 	return data;
 }
 
-async function getWomenClothes(): Promise<ClothItem[]> {
-	const { data } = await axios.get<ClothItem[]>(`${apiBaseUrl}/${ClothCategory.WOMEN}`);
+async function getShoeById(id: number): Promise<Shoe[]> {
+	const { data } = await axios.get<Shoe[]>(`${apiBaseUrl}/shoes/${id}`);
 	return data;
 }
 
-export default { getMenClothes, getWomenClothes };
+export default { getAllShoes, getShoeById };
