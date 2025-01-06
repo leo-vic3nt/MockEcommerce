@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import MobileNav from "@/components/Header/NavigationMenu/MobileNav/MobileNav.tsx";
+import MobileNav from "@/components/NavigationMenu/MobileNav/MobileNav.tsx";
 import userEvent from "@testing-library/user-event";
 
 describe("MobileNav", () => {

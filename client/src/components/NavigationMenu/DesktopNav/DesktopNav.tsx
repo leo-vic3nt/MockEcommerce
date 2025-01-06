@@ -1,4 +1,4 @@
-import NavBtn from "@/components/Header/NavigationMenu/NavBtn/NavBtn.tsx";
+import NavBtn from "@/components/NavigationMenu/NavBtn/NavBtn.tsx";
 
 function DesktopNav() {
 	return (

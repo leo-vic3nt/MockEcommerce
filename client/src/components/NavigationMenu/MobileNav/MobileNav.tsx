@@ -5,8 +5,8 @@ import {
 	DropdownMenuItem,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import NavBtn from "@/components/Header/NavigationMenu/NavBtn/NavBtn.tsx";
+} from "@/components/ui/dropdown-menu.tsx";
+import NavBtn from "@/components/NavigationMenu/NavBtn/NavBtn.tsx";
 
 function MobileNav() {
 	return (

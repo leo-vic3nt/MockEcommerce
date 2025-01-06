@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import DesktopNav from "@/components/Header/NavigationMenu/DesktopNav/DesktopNav.tsx";
+import DesktopNav from "@/components/NavigationMenu/DesktopNav/DesktopNav.tsx";
 
 describe("DesktopNav", () => {
 	test("renders all navigation links", () => {

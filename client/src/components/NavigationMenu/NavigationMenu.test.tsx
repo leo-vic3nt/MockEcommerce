@@ -1,13 +1,13 @@
 import { describe, expect, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import NavigationMenu from "@/components/Header/NavigationMenu/NavigationMenu.tsx";
+import NavigationMenu from "@/components/NavigationMenu/NavigationMenu.tsx";
 
-vi.mock("@/components/Header/NavigationMenu/DesktopNav/DesktopNav.tsx", () => ({
+vi.mock("@/components/NavigationMenu/DesktopNav/DesktopNav.tsx", () => ({
 	default: () => <nav data-testid="desktop-nav">Desktop Navigation</nav>,
 }));
 
-vi.mock("@/components/Header/NavigationMenu/MobileNav/MobileNav.tsx", () => ({
+vi.mock("@/components/NavigationMenu/MobileNav/MobileNav.tsx", () => ({
 	default: () => <nav data-testid="mobile-nav">Mobile Navigation</nav>,
 }));
 

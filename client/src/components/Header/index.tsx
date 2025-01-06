@@ -1,5 +1,5 @@
 import Brand from "@/components/Header/Brand/Brand.tsx";
-import NavigationMenu from "@/components/Header/NavigationMenu/NavigationMenu.tsx";
+import NavigationMenu from "@/components/NavigationMenu/NavigationMenu.tsx";
 import FavoritesTracker from "@/components/Header/FavoritesTracker/FavoritesTracker.tsx";
 import CartIcon from "@/components/Header/CartIcon/CartIcon.tsx";
 import useMediaQuery from "@/hooks/useMediaQuery.tsx";
