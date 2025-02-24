@@ -14,6 +14,7 @@ app.use(
         methods: ["GET"],
     })
 );
+
 app.use(
     helmet({
         crossOriginResourcePolicy: {
@@ -21,12 +22,23 @@ app.use(
         },
         contentSecurityPolicy: {
             directives: {
-                imgSrc: ["'self'", "http://localhost:3001"]
-            }
-        }
+                imgSrc: ["'self'", "http://localhost:3001"],
+            },
+        },
     })
 );
+
 app.use(compression());
+
+app.get("/", (_, res) => {
+    res.json({
+        shoes: {
+            "/": "return all shoes available",
+            "/id": "return specified shoe",
+        },
+    });
+});
+
 app.use("/assets", express.static(path.join(import.meta.dirname, "public")));
 
 app.use("/shoes", shoesRouter);
